@@ -1,0 +1,28 @@
+java包
+com.bookshop.action action类来处理action
+com.bookshop.advice
+com.bookshop.bean
+com.bookshop.dao
+com.bookshop.dao.impl
+com.bookshop.entity
+com.bookshop.service
+com.bookshop.serivce.impl
+com.bookshop.util
+
+hibernate.cfg.xml
+struts.xml
+
+sql/book shop.sql文件：保存数据库制作文档
+
+文件：
+css
+	main.css.css	主要css文件
+	flexslider.css	轮播图用css
+
+img
+	*.jpg	装饰图片
+	book/*.jpg	书籍图片
+
+js	轮播用
+jsp
+	

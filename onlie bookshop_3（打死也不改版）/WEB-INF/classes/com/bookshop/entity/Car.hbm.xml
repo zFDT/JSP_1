@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.bookshop.entity.Car" table="car">
+	<id name="bookid" column="id_book"></id>
+	<property name="username" column="name_user"></property>
+	<property name="number" column="number"></property>
+	<property name="picture" column="picture_book"></property>
+	<property name="name_ch" column="name_ch_book"></property>
+	<property name="name_en" column="name_en_book"></property>
+	<property name="author_ch" column="author_ch_book"></property>
+	<property name="author_en" column="author_en_book"></property>
+	<property name="price" column="price_book"></property></class>
+</hibernate-mapping>
+	

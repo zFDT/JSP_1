@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- name:模型的全名称 -->
+	<class name="com.bookshop.entity.User" table="userinfo">
+	<id name="username" column="name_user"></id>
+	<property name="password" column="pwd_user"></property>
+	<property name="address" column="address_user"></property>
+	<property name="gender" column="gender_user"></property>
+	</class>
+</hibernate-mapping>
+	

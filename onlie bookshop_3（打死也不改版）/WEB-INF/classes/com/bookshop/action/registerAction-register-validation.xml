@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<validator type="requiredstring">
+		<param name="fieldName">username</param>
+		<message key="validate_name_null"></message>
+	</validator>
+
+	<field name="password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="validate_pass_null"></message>
+		</field-validator>
+
+		<field-validator type="regex">
+			<param name="regexExpression"><![CDATA[\w{6,12}]]></param>
+			<message key="validate_pass_scope"></message>
+		</field-validator>
+	</field>
+	<validator type="requiredstring">
+		<param name="fieldName">gender</param>
+		<message key="validate_gender_null"></message>
+	</validator>
+
+
+	<validator type="requiredstring">
+		<param name="fieldName">address</param>
+		<message key="validate_address_null"></message>
+	</validator>
+	
+
+
+</validators>

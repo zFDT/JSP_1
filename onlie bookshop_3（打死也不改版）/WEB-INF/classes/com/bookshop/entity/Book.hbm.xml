@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- name:模型的全名称 -->
+	<class name="com.bookshop.entity.Book" table="bookinfo">
+	<!-- name:模型属性名 -->
+	<id name="id" column="id_book">
+		<!-- generator:id的生成策略
+		native:如果是mysql数据库，id会自动增长 -->
+		<generator class="native"></generator>
+	</id>
+	<!-- 如果模型的属性和数据库的列名，就不用写column -->
+	<property name="picture" column="picture_book"></property>
+	<property name="name_ch" column="name_ch_book"></property>
+	<property name="name_en" column="name_en_book"></property>
+	<property name="author_ch" column="author_ch_book"></property>
+	<property name="author_en" column="author_en_book"></property>
+	<property name="price" column="price_book"></property>
+	</class>
+</hibernate-mapping>
+	

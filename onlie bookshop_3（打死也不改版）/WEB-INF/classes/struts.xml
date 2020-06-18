@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<!-- 2.配置开发模式 ：开发模式：改了配置文件不需要重启。输出更多的错误信息。开发阶段建议为true -->
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="resources.message" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="p1" extends="struts-default" namespace="/">
+ 		
+ 		<!-- 注册 -->
+ 		<action name="register" class="com.bookshop.action.registerAction" method="register">
+			<result name="success">/jsp/login.jsp</result>
+			<result name="input">/jsp/register.jsp</result>
+			<result name="error">/jsp/error.jsp</result>
+		</action> 
+		
+		<!-- 登录 -->
+		<action name="login" class="com.bookshop.action.registerAction" method="login">
+			<!-- 转发到main页面 -->
+			<result name="success" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">main</param>
+				</result>
+			<result name="input">/jsp/login.jsp</result>
+			<result name="error">/jsp/error.jsp</result>
+		</action>
+		
+		<!-- main页面 -->
+		<action name="main" class="com.bookshop.action.BookAction" method="showbook">
+			<result name="success">/jsp/main.jsp</result>
+		</action>	
+		
+		<!-- 加入购物车 -->
+		<action name="addcar" class="com.bookshop.action.carAction" method="addcar">
+			<result name="success" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">carshow</param>
+			</result>
+		<!--  <result name="success">/jsp/login.jsp</result>-->
+		</action>
+		
+		<!-- 删除购物车 -->
+		<action name="cardel" class="com.bookshop.action.carAction" method="deletecar">
+			<result name="success" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">carshow</param>
+			</result>
+		<!--  <result name="success">/jsp/login.jsp</result>-->
+		</action>
+		
+		<!-- 显示购物车 -->
+		<action name="carshow" class="com.bookshop.action.carAction" method="showcar">
+			<result name="success">/jsp/cart.jsp</result>
+		</action>
+		
+	 	<action name="locale" class="com.bookshop.action.LoginLocale" method="execute">
+			<result name="success">/jsp/register.jsp</result>
+		</action>
+		
+	</package>
+</struts>
